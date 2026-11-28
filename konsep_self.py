@@ -20,13 +20,29 @@ class Mahasiswa:
         self.nama = nama
 
 
-# Contoh penggunaan
-mk = MataKuliah("TI101", "Pemrograman Dasar")
-m1 = Mahasiswa("23001", "Budi")
-m2 = Mahasiswa("23002", "Siti")
+if __name__ == "__main__":
+    # Buat 2 mata kuliah
+    mk1 = MataKuliah("TI101", "Pemrograman Berorientasi Objek")
+    mk2 = MataKuliah("TI102", "Basis Data")
 
-mk.tambah_mahasiswa(m1)
-mk.tambah_mahasiswa(m2)
+    # Buat 3 mahasiswa
+    m1 = Mahasiswa("23001", "Budi")
+    m2 = Mahasiswa("23002", "Siti")
+    m3 = Mahasiswa("23003", "Andi")
 
-print(mk.daftar_mahasiswa())
-print(mk.jumlah_mahasiswa())  # Output: 2
+    # Daftarkan mahasiswa ke masing-masing mata kuliah
+    mk1.tambah_mahasiswa(m1)
+    mk1.tambah_mahasiswa(m2)
+    mk1.tambah_mahasiswa(m3)
+
+    mk2.tambah_mahasiswa(m1)
+    mk2.tambah_mahasiswa(m3)
+
+    # Tampilkan hasil
+    print(f"{mk1.kode} - {mk1.nama}:")
+    print("  Daftar:", mk1.daftar_mahasiswa())
+    print("  Jumlah:", mk1.jumlah_mahasiswa())
+
+    print(f"{mk2.kode} - {mk2.nama}:")
+    print("  Daftar:", mk2.daftar_mahasiswa())
+    print("  Jumlah:", mk2.jumlah_mahasiswa())
