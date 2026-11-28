@@ -21,11 +21,11 @@ class Mahasiswa:
 
 
 if __name__ == "__main__":
-    # Buat 2 mata kuliah
+    # 2 mata kuliah
     mk1 = MataKuliah("TI101", "Pemrograman Berorientasi Objek")
     mk2 = MataKuliah("TI102", "Basis Data")
 
-    # Buat 3 mahasiswa
+    # 3 mahasiswa
     m1 = Mahasiswa("23001", "Budi")
     m2 = Mahasiswa("23002", "Siti")
     m3 = Mahasiswa("23003", "Andi")
@@ -38,11 +38,10 @@ if __name__ == "__main__":
     mk2.tambah_mahasiswa(m1)
     mk2.tambah_mahasiswa(m3)
 
-    # Tampilkan hasil
-    print(f"{mk1.kode} - {mk1.nama}:")
-    print("  Daftar:", mk1.daftar_mahasiswa())
-    print("  Jumlah:", mk1.jumlah_mahasiswa())
-
-    print(f"{mk2.kode} - {mk2.nama}:")
-    print("  Daftar:", mk2.daftar_mahasiswa())
-    print("  Jumlah:", mk2.jumlah_mahasiswa())
+    # Tampilkan daftar mahasiswa dan jumlah mahasiswanya
+    for mk in (mk1, mk2):
+        daftar = mk.daftar_mahasiswa()
+        jumlah = mk.jumlah_mahasiswa()
+        print(f"Mata Kuliah: {mk.kode} - {mk.nama}")
+        print(f"Daftar Mahasiswa ({jumlah} orang): {', '.join(daftar) if daftar else 'Belum ada'}")
+        print("-" * 40)
