@@ -10,11 +10,15 @@ class MataKuliah:
     def daftar_mahasiswa(self):
         return [m.nama for m in self.mahasiswa]
 
+    def jumlah_mahasiswa(self):
+        return len(self.mahasiswa)
+
 
 class Mahasiswa:
     def __init__(self, nim, nama):
         self.nim = nim
         self.nama = nama
+
 
 # Contoh penggunaan
 mk = MataKuliah("TI101", "Pemrograman Dasar")
@@ -25,3 +29,4 @@ mk.tambah_mahasiswa(m1)
 mk.tambah_mahasiswa(m2)
 
 print(mk.daftar_mahasiswa())
+print(mk.jumlah_mahasiswa())  # Output: 2
